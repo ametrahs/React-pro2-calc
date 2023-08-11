@@ -43,7 +43,7 @@ case ACTIONS.CHOOSE_OPERATION:
       overwrite: false,
     }
   }  */
-if(state.currentOperand == null && state.previousOperand == null){
+if(state.currentOperand == null && state.previousOperand == null) {
   return state
 }
 
@@ -75,7 +75,7 @@ return {
  case ACTIONS.CLEAR:
   return {}
   case ACTIONS.DELETE_DIGIT:
-    if ( state.overwrite) {
+    if (state.overwrite) {
       return {
         ...state,
         overwrite:false,
@@ -84,7 +84,7 @@ return {
     }
     if(state.currentOperand == null )
     return state
-    if(state.currentOperand.length === 1){
+    if(state.currentOperand.length === 1) {
       return {...state, currentOperand: null }
     }
     return{
@@ -109,7 +109,7 @@ return {
   }
 }
 
-function evaluate ({currentOperand, previousOperand,
+function evaluate({ currentOperand, previousOperand,
    operation})
 {
   const prev = parseFloat(previousOperand)
