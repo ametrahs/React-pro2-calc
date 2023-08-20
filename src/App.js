@@ -32,7 +32,7 @@ if(payload.digit === "." && state.currentOperand.includes(".")) {
 }
       return {
       ...state,
-       currentOperand: '${state.currentOperand || ""}${payload.digit}', 
+       currentOperand: `${state.currentOperand || ""}${payload.digit}`, 
       }
  
 case ACTIONS.CHOOSE_OPERATION:
@@ -141,7 +141,7 @@ function formatOperand(operand){
   if (operand == null) return
   const [integer, decimal] = operand.split(".")
    if(decimal == null ) return INTEGER_FORMATTER.format(integer)
-return '${INTEGER_FORMATTER.format(integer)}.${decimal}'
+return `${INTEGER_FORMATTER.format(integer)}.${decimal}`
   
 }
 
